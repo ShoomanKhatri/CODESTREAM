@@ -2,7 +2,7 @@ name: Update Text File
 
 on:
   schedule:
-    - cron: '57 6 * * *'  # Run daily at 6:20 AM UTC
+    - cron: '06 7 * * *'  # Run daily at 6:20 AM UTC
 
 jobs:
   commit:
@@ -29,4 +29,4 @@ jobs:
           git commit -m "Update example.txt"  # Consider more descriptive commit messages
           git push https://github.com/${{ github.repository }} HEAD:${{ github.ref }} || true  # Handle potential errors (optional)
         env:
-          MY_ACCESS_TOKEN: ${{ secrets.MY_ACCESS_TOKEN }}
+          GH_TOKEN: ${{ secrets.MY_ACCESS_TOKEN }}
