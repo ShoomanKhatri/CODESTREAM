@@ -2,7 +2,7 @@ name: Update Text File
 
 on:
   schedule:
-    - cron: '3 8 * * *'  # Run daily at 7:08 AM UTC
+    - cron: '20 8 * * *'  # Run daily at 7:08 AM UTC
 
 jobs:
   commit:
@@ -17,11 +17,11 @@ jobs:
           echo "This is a simple text file." >> example.txt  # Append instead of overwrite
           # echo "" > example.txt  # Use this line to delete the contents of the text file
 
-      # Optional: Set Git Config
-      #- name: Set Git Config
-      #  run: |
-      #    git config --global user.email "your-email@example.com"
-      #    git config --global user.name "Your Name" || true  # Handle potential errors (optional)
+      Optional: Set Git Config
+      - name: Set Git Config
+       run: |
+         git config --global user.email "shoomankhatri@gmail.com"
+         git config --global user.name "shoomankhatri" || true  # Handle potential errors (optional)
 
       - name: Commit and Push
         run: |
