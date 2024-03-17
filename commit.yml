@@ -1,4 +1,4 @@
-name: Daily Commit
+name: Update Text File
 
 on:
   schedule:
@@ -12,19 +12,15 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-
-      - name: Install Dependencies
-        run: npm install  # Install any dependencies if needed
+      - name: Add or Delete Text File
+        run: |
+          echo "This is a simple text file." > example.txt  # Create or overwrite the text file
+          # echo "" > example.txt  # Use this line to delete the contents of the text file
 
       - name: Commit and Push
         run: |
-          echo "$(date)" > today.txt  # Create a file with the current date
           git config --global user.email "your-email@example.com"
           git config --global user.name "Your Name"
-          git add today.txt
-          git commit -m "Auto commit: $(date)"
+          git add example.txt
+          git commit -m "Update example.txt"
           git push https://github.com/${{ secrets.ACCESS_TOKEN }} HEAD:${{ github.ref }} --quiet --set-upstream
