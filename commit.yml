@@ -27,4 +27,6 @@ jobs:
         run: |
           git add example.txt
           git commit -m "Update example.txt"  # Consider more descriptive commit messages
-          git push https://github.com/${{ github.repository }} HEAD:${{ github.ref }} || true  # Handle potential errors (optional)
+         git push https://github.com/${{ github.repository }} HEAD:${{ github.ref }} || true  # Handle potential errors (optional)
+        env:
+          MY_ACCESS_TOKEN: ${{ secrets.MY_ACCESS_TOKEN }}
