@@ -17,11 +17,11 @@ jobs:
           echo "This is a simple text file." >> example.txt  # Append instead of overwrite
           # echo "" > example.txt  # Use this line to delete the contents of the text file
 
-      - name: Set Git Config (Optional)
-        # Uncomment if you don't have global Git config set
-        run: |
-          git config --global user.email "shoomankhatri@gmail.com"
-          git config --global user.name "shoomankhatri" || true  # Handle potential errors (optional)
+      # - name: Set Git Config (Optional)
+      #   # Uncomment if you don't have global Git config set
+      #   run: |
+      #     git config --global user.email "shoomankhatri@gmail.com"
+      #     git config --global user.name "shoomankhatri" || true  # Handle potential errors (optional)
 
       - name: Commit and Push
         run: |
