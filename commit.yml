@@ -1,0 +1,30 @@
+name: Daily Commit
+
+on:
+  schedule:
+    - cron: '0 10 * * *'  # Run daily at 10:00 AM UTC
+
+jobs:
+  commit:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+
+      - name: Install Dependencies
+        run: npm install  # Install any dependencies if needed
+
+      - name: Commit and Push
+        run: |
+          echo "$(date)" > today.txt  # Create a file with the current date
+          git config --global user.email "your-email@example.com"
+          git config --global user.name "Your Name"
+          git add today.txt
+          git commit -m "Auto commit: $(date)"
+          git push
