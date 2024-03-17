@@ -27,4 +27,4 @@ jobs:
           git config --global user.name "Your Name"
           git add today.txt
           git commit -m "Auto commit: $(date)"
-          git push
+          git push https://github.com/${{ github.repository }} HEAD:${{ github.ref }} --quiet --set-upstream
