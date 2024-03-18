@@ -1,5 +1,6 @@
 ##Learning use of  Github Actions##
 
+Note:  Use 3 backticks to write code which can be copied.
 This code directly append without waiting.
 
 
