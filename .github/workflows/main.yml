@@ -2,7 +2,7 @@ name: Update Text File
 
 on:
   schedule:
-    - cron: '27 5 * * *'  # UTC TIME, it is running 9 minute late due to some reasons.
+    - cron: '50 5 * * *'  # UTC TIME, it is running 9 minute late due to some reasons.
 
 jobs:
   commit:
@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Add or Delete Text File
         run: |
