@@ -1,9 +1,8 @@
 name: Update Text File
 
 on:
-  push:
-    branches:
-      - main  # Adjust the branch name as needed
+  schedule:
+    - cron: '54 6 * * *'  # UTC TIME, it is running 9 minute late due to some reasons.
 
 jobs:
   commit:
@@ -18,7 +17,7 @@ jobs:
           echo "This is a simple text file." >> example.txt  # Append instead of overwrite
           # echo "" > example.txt  # Use this line to delete the contents of the text file
 
-      - name: Set Git Config (Optional).
+      - name: Set Git Config (Optional)
         run: |
           git config --global user.email "shoomankhatri@gmail.com"
           git config --global user.name "shoomankhatri" || true  # Handle potential errors (optional)
@@ -30,3 +29,5 @@ jobs:
           git push https://github.com/${{ github.repository }} HEAD:${{ github.ref }} || true  # Handle potential errors (optional)
         env:
           GH_TOKEN: ${{ secrets.MY_ACCESS_TOKEN }}  # Use your secret name here
+
+
