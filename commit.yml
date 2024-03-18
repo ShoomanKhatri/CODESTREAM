@@ -2,7 +2,7 @@ name: Update Text File
 
 on:
   schedule:
-    - cron: '57 3 * * *'  # Run daily at 7:08 AM UTC
+    - cron: '9 4 * * *'  # Run daily at 1:27 PM UTC
 
 jobs:
   commit:
@@ -12,16 +12,16 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Add or Modify Text File
+      - name: Add or Delete Text File
         run: |
           echo "This is a simple text file." >> example.txt  # Append instead of overwrite
           # echo "" > example.txt  # Use this line to delete the contents of the text file
 
-      # Optional: Set Git Config
-      - name: Set Git Config
+      - name: Set Git Config (Optional)
+        # Uncomment if you don't have global Git config set
         run: |
-          git config --global user.email "shoomankhatri@gmail.com"
-          git config --global user.name "shoomankhatri" || true  # Handle potential errors (optional)
+          git config --global user.email "studentsahil66112@newhorizon.edu.np"
+          git config --global user.name "imhaxxor" || true  # Handle potential errors (optional)
 
       - name: Commit and Push
         run: |
@@ -29,4 +29,4 @@ jobs:
           git commit -m "Update example.txt"  # Consider more descriptive commit messages
           git push https://github.com/${{ github.repository }} HEAD:${{ github.ref }} || true  # Handle potential errors (optional)
         env:
-          GH_TOKEN: ${{ secrets.MY_ACCESS_TOKEN }}  # Use your secret name here
+          GH_TOKEN: ${{ secrets.MY_ACCESS_TOKEN }}
