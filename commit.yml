@@ -30,5 +30,5 @@
 #         env:
 #           GH_TOKEN: ${{ secrets.MY_ACCESS_TOKEN }}  # Use your secret name here
 
-run: echo "This is a simple text file." >> path/to/example.txt
+run: echo "This is a simple text file." >> example.txt
 
