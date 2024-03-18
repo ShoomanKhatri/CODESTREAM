@@ -1,31 +1,34 @@
-name: Update Text File
+# name: Update Text File
 
-on:
-  schedule:
-    - cron: '2 6 * * *'  # UTC TIME, it is running 9 minute late due to some reasons.
+# on:
+#   schedule:
+#     - cron: '2 6 * * *'  # UTC TIME, it is running 9 minute late due to some reasons.
 
-jobs:
-  commit:
-    runs-on: ubuntu-latest
+# jobs:
+#   commit:
+#     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
+#     steps:
+#       - name: Checkout Repository
+#         uses: actions/checkout@v3
 
-      - name: Add or Delete Text File
-        run: |
-          echo "This is a simple text file." >> example.txt  # Append instead of overwrite
-          # echo "" > example.txt  # Use this line to delete the contents of the text file
+#       - name: Add or Delete Text File
+#         run: |
+#           echo "This is a simple text file." >> example.txt  # Append instead of overwrite
+#           # echo "" > example.txt  # Use this line to delete the contents of the text file
 
-      - name: Set Git Config (Optional)
-        run: |
-          git config --global user.email "shoomankhatri@gmail.com"
-          git config --global user.name "shoomankhatri" || true  # Handle potential errors (optional)
+#       - name: Set Git Config (Optional)
+#         run: |
+#           git config --global user.email "shoomankhatri@gmail.com"
+#           git config --global user.name "shoomankhatri" || true  # Handle potential errors (optional)
 
-      - name: Commit and Push
-        run: |
-          git add example.txt
-          git commit -m "Update example.txt"  # Consider more descriptive commit messages
-          git push https://github.com/${{ github.repository }} HEAD:${{ github.ref }} || true  # Handle potential errors (optional)
-        env:
-          GH_TOKEN: ${{ secrets.MY_ACCESS_TOKEN }}  # Use your secret name here
+#       - name: Commit and Push
+#         run: |
+#           git add example.txt
+#           git commit -m "Update example.txt"  # Consider more descriptive commit messages
+#           git push https://github.com/${{ github.repository }} HEAD:${{ github.ref }} || true  # Handle potential errors (optional)
+#         env:
+#           GH_TOKEN: ${{ secrets.MY_ACCESS_TOKEN }}  # Use your secret name here
+
+run: echo "This is a simple text file." >> path/to/example.txt
+
