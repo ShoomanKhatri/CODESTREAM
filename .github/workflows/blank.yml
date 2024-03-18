@@ -2,7 +2,7 @@ name: Update Text File
 
 on:
   schedule:
-    - cron: '25 2 * * *'  # Run daily at 2:25 AM UTC
+    - cron: '50 2 * * *'  # Run daily at 2:25 AM UTC
 
 jobs:
   commit:
