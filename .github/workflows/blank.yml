@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2
+        uses: shoomankhatri/checkout@v2
 
       - name: Add or Modify Text File
         run: |
