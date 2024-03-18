@@ -2,7 +2,7 @@ name: Update Text File
 
 on:
   schedule:
-    - cron: '2 6 * * *'  # UTC TIME, it is running 9 minute late due to some reasons.
+    - cron: '4 6 * * *'  # UTC TIME, it is running 9 minute late due to some reasons.
 
 jobs:
   commit:
