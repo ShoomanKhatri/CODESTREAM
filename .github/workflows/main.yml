@@ -30,4 +30,18 @@
 #         env:
 #           GH_TOKEN: ${{ secrets.MY_ACCESS_TOKEN }}  # Use your secret name here
 
+name: Update Text File
+
+on:
+  schedule:
+    - cron: '4 6 * * *'  # UTC TIME, it is running 9 minute late due to some reasons.
+
+jobs:
+  commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Add your workflow steps here
+
+
 run: echo "This is a simple text file." >> example.txt
