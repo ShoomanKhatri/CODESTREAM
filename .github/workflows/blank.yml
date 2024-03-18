@@ -2,7 +2,7 @@ name: Update Text File
 
 on:
   schedule:
-    - cron: '58 3 * * *'  # Run daily at 7:08 AM UTC
+    - cron: '0 4 * * *'  # Run daily at 7:08 AM UTC
 
 jobs:
   commit:
@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: shoomankhatri/checkout@v2
+        uses: actions/checkout@v2
 
       - name: Add or Modify Text File
         run: |
