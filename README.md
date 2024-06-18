@@ -36,7 +36,7 @@ jobs:
           git commit -m "Update example.txt"  # Consider more descriptive commit messages
           git push https://github.com/${{ github.repository }} HEAD:${{ github.ref }} || true  # Handle potential errors (optional)
         env:
-          GH_TOKEN: ${{ secrets.MY_ACCESS_TOKEN }}  # Use your secret name here
+          GH_TOKEN: ${{ secrets.MY_ACCESS_TOKEN }}  # Use your secret name here.
 ```
 
 
